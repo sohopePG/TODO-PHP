@@ -34,7 +34,7 @@
                $lines = file($filename,FILE_IGNORE_NEW_LINES|FILE_SKIP_EMPTY_LINES);
                $date = date("Y年m月d日 H時i分s秒");
                
-               if(file_exists("mission_3-5.txt")){
+               if(file_exists($filename)){
                    $num = intval(end($lines))+1;
                }else{
                    $num = 1;
@@ -44,7 +44,7 @@
                //新規書き込みデータ
                $editdate = $_POST["editnum"]."<>".$_POST["name"]."<>".$_POST["str"]."<>".$date."<>";
                //編集データ
-               if($_POST["editnum"]){
+               if(!empty($_POST["editnum"])){
                    //編集番号があったら
                    foreach($lines as &$line){
                        //＆で参照渡しをしている
@@ -55,10 +55,10 @@
                     }
                    }
                }else{
-                   //新規書き込みなので配列の末尾に追加
+                   //新規書き込みなので($editnumがないので)配列の末尾に追加
                    $lines[] = $newdate;
                }
-               //ファイルに書き込む(implodeで配列を改行の文字列にしている)
+               //ファイルに書き込む(implodeで配列を改行で区切って文字列にしている)
                file_put_contents($filename, implode("\n", $lines));
              }
     ?>
