@@ -8,11 +8,10 @@
 
             if(!empty($_POST["del"])){
                $lines = file($filename,FILE_IGNORE_NEW_LINES|FILE_SKIP_EMPTY_LINES);
-               $del = $_POST["del"];
+
                foreach($lines as &$line){
                $linex = explode("<>",$line);
-               
-                 if($linex[0] == $del){
+                 if($linex[0] == $_POST["del"]){
                     $line = "";
                }
                file_put_contents($filename, implode("\n", $lines));
