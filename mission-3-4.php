@@ -21,13 +21,13 @@
 
             if(!empty($_POST["edit"])){
                   $lines = file($filename,FILE_IGNORE_NEW_LINES|FILE_SKIP_EMPTY_LINES);
-               for($i = 0;$i < count($lines);$i++){
-                  $line = explode("<>",$lines[$i]);
+               foreach($lines as $line){
+                  $linex = explode("<>",$line);
          
-                 if($line[0] == $_POST["edit"]){
-                   $editnum = $line[0];
-                   $editname = $line[1];
-                   $editcoment = $line[2];
+                 if($linex[0] == $_POST["edit"]){
+                   $editnum = $linex[0];
+                   $editname = $linex[1];
+                   $editcoment = $linex[2];
                  }
                }
              }else if(!empty($_POST["str"])){
@@ -52,18 +52,17 @@
                        if($linex[0] == $_POST["editnum"]){
                            //編集番号が一致したら編集データに上書き
                             $line = $editdate;
-                    }
+                       }
                    }
                }else{
                    //新規書き込みなので($editnumがないので)配列の末尾に追加
                    $lines[] = $newdate;
-               }
+                }
                //ファイルに書き込む(implodeで配列を改行で区切って文字列にしている)
                file_put_contents($filename, implode("\n", $lines));
-             }
+               }
     ?>
-      
-    
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -93,7 +92,7 @@
             $linex = explode("<>", $line);
             
             echo "<p>".$linex[0]."---".$linex[1]."---".$linex[3]."<br>".$linex[2]."<p>";
-            }
+             }
             }
     ?>
 </body>
