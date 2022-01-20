@@ -1,9 +1,9 @@
 <?php
 
   function getPDO(){
-      $dsn = 'mysql:dbname=tb230072db;host=localhost';
-      $user = 'tb-230072';
-      $password = 'LnLBsdMTF6';
+      $dsn = '';
+      $user = '';
+      $password = '';
   try{
       $pdo = new PDO(
       $dsn, 
@@ -22,9 +22,9 @@
      }
    }
    function getPDO2(){
-        $dsn = 'mysql:dbname=tb230072db;host=localhost';
-        $user = 'tb-230072';
-        $password = 'LnLBsdMTF6';
+        $dsn = '';
+        $user = '';
+        $password = '';
     try{
         $pdo = new PDO(
         $dsn, 
