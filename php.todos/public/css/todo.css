@@ -1,0 +1,71 @@
+.delete{
+    color:#ccc;
+    cursor:pointer;
+}
+ul{
+    list-style: none;
+    padding: 0px;
+    padding-top: 20px;
+    }
+li{
+    padding: 20px;
+    background-color: white;
+    border-bottom: solid 3px rgb(119, 182, 25);
+    display:flex;
+    border-radius:0 0 4px 4px;
+    }
+input[type="text"]{
+    width: 80%;
+    padding: 5px;
+    box-sizing: border-box;
+    margin-bottom:30px ;
+    }
+#cont{
+    margin: 30px auto; 
+    text-align: center;
+    width: 600px;
+    }
+.kesu{
+    margin-left:20px;
+    color: white;
+    background-color: rgb(120, 120, 247);
+    border-radius: 4px;
+    cursor: pointer;
+    }
+#textform{
+    background-color: white;
+    border:solid 5px rgb(200, 250, 125);
+    border-radius: 4px;
+    }
+.done{
+    text-decoration: line-through;
+    color: #ccc;
+    }
+body{
+    background-color: rgb(221, 220, 220);
+}
+.top{
+    margin-top: auto;
+    color: rgb(167, 166, 166);
+}
+#button{
+    color: white;
+    background-color: rgb(255, 126, 126);
+        border-radius:4px;
+        cursor: pointer;
+}
+.tododate{
+    background-color: white;
+    border-bottom:solid gray;
+    margin:10px 10px 0 0;
+    width:100%;
+    border-radius:4px 4px 0 0;
+}
+@media(max-width:500px){
+    #cont{
+    margin: 30px auto; 
+    text-align: center;
+    width: 350px;
+  }
+}
+
